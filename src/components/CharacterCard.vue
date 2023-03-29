@@ -2,7 +2,8 @@
     <div class="character text-center my-3">
         <img class='img-fluid' :src="image" :alt="`Immagine di: ${name}`"/>
         <h6>{{ name }}</h6>
-        <p class="mb-0">{{ archetype }}</p>
+        <p class="mb-0">{{ type }}</p>
+        <!-- <p class="mb-0">{{ archetype }}</p> -->
     </div>
 </template>
 
@@ -12,7 +13,8 @@
         props: {
             image: String,
             name: String,
-            archetype: String,
+            type: String,
+            // archetype: String,
         }
     }
 </script>

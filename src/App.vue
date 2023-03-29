@@ -19,7 +19,8 @@ export default {
   },
   methods: {
     getCharacters() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?cardset=metal%20raiders&num=18&offset=0')
+      // axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
 
       
       .then(response => {

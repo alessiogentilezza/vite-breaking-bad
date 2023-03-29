@@ -2,8 +2,11 @@
     <div class="container px-5">
         <div class="row p-4">
             <div class="col-2" v-for="(character, index) in store.charactersList" :key="index">
-                <CharacterCard :image="character.card_images[0].image_url" :name="character.name"
-                    :archetype="character.archetype" />
+                <CharacterCard 
+                :image="character.card_images[0].image_url" 
+                :name="character.name"
+                :type="character.type" />
+                <!-- :archetype="character.archetype" /> -->
             </div>
         </div>
     </div>
