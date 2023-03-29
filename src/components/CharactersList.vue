@@ -1,11 +1,9 @@
-<template>
-    <div class="container wrap p-3">
-        <div class="row">
+<template>            
+    <div class="container px-5">
+        <div class="row p-4">
             <div class="col-2" v-for="(character, index) in store.charactersList" :key="index">
-                <CharacterCard 
-                :image="character.card_images[0].image_url" 
-                :name="character.name" 
-                :archetype="character.archetype" />
+                <CharacterCard :image="character.card_images[0].image_url" :name="character.name"
+                    :archetype="character.archetype" />
             </div>
         </div>
     </div>
@@ -25,10 +23,15 @@ export default {
         }
     },
     components: {
-        CharacterCard
+        CharacterCard,
     }
 }
 </script>
 
 
-<style></style>
+<style scoped lang="scss">
+.row {
+    background-color: white;
+}
+
+</style>

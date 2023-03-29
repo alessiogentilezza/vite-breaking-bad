@@ -1,4 +1,6 @@
 @use "bootstrap";
+@use "../styles/partials/variables" as *;
+
 * {
     padding: 0;
     margin: 0;
@@ -6,11 +8,5 @@
 }
 
 body{
-    background-color: rgb(202, 146, 73);
+    background-color: $primary-color;
 }
-
-.wrap{
-    width: 80%;
-    margin: 0 auto;
-  }
-  
