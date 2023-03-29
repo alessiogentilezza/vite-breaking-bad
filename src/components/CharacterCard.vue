@@ -1,7 +1,7 @@
 <template>
     <div class="character text-center">
-        <img class='img-fluid rounded-circle' :src="image" :alt="`Immagine di: ${name}`"/> -->
-        <h3>{{ name }}</h3>
+        <img class='img-fluid' :src="image" :alt="`Immagine di: ${name}`"/>
+        <h5>{{ name }}</h5>
         <h5>{{ species }}</h5>
         <h5>{{ archetype }}</h5>
     </div>

@@ -26,11 +26,6 @@ header{
   background-color: white;
   display: flex;
   align-items: center;
-  
-}
-.wrap{
-  width: 80%;
-  margin: 0 auto;
 }
 
 </style>
