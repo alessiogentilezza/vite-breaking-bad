@@ -17,9 +17,9 @@ export default {
   },
   methods: {
     getCharacters() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
       .then(response => {
-        this.store.charactersList = response.data;
+        this.store.charactersList = response.data.data;
       });
     }
   },
