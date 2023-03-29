@@ -1,28 +1,41 @@
 <script >
-import TheHeader from "./components/TheHeader.vue";
+import axios from 'axios';
+import { store } from './store.js';
+
+import TheHeader from './components/TheHeader.vue';
+import CharactersList from './components/CharactersList.vue';
 
 export default {
   components: {
     TheHeader,
+    CharactersList,
   },
   data() {
-    return {};
+    return {
+      store
+    }
   },
-  methods: {},
-};
+  methods: {
+    getCharacters() {
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+      .then(response => {
+        this.store.charactersList = response.data;
+      });
+    }
+  },
+  created() {
+    this.getCharacters();
+  }
+}
 
 </script>
 
 <template>
-  
-  <div class="card" style="width: 18rem;">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+  <TheHeader></TheHeader>
+  <main>
+    <CharactersList />
 
-</div>
+  </main>
 
 </template>
 

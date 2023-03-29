@@ -1,1 +1,10 @@
-@use "bootstrap";
+// @use "bootstrap";
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(202, 146, 73);
+}
