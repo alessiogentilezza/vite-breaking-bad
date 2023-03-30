@@ -1,7 +1,8 @@
 <template>
     <div class="container p-5">
         <div class="col-3">
-            <select @change="$emit('doSelect')" class="form-select" aria-label="Default select example" v-model="store.select">
+            <select v:on-change="$emit('doSelect')" class="form-select" v-model="store.select">
+                <option value="">All</option>
                 <option value="Adamancipator">Adamancipator</option>
                 <option value="Archfiend">Archfiend</option>
                 <option value="Batteryman">Batteryman</option>
@@ -14,7 +15,7 @@
     <div class="container px-5">
         <div class="row p-4 bg-dark bg-gradient text-white">
             <div class="col-auto">
-                Lorem ipsum dolor sit amet.
+                <ResultMessage></ResultMessage>
             </div>
         </div>
     </div>
@@ -24,9 +25,16 @@
 <script>
 
 import { store } from '../store.js';
+import ResultMessage from './ResultMessage.vue';
+
 
 export default {
-    name: 'AppSearch',
+    name: 'AppSelect',
+
+    components: {
+        ResultMessage,
+    },
+
     data() {
         return {
             store

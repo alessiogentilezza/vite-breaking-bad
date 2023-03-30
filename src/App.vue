@@ -3,7 +3,7 @@ import axios from 'axios';
 import { store } from './store.js';
 
 import TheHeader from './components/TheHeader.vue';
-import AppSearch from './components/AppSearch.vue';
+import AppSelect from './components/AppSelect.vue';
 import CharactersList from './components/CharactersList.vue';
 import Loading from './components/Loading.vue';
 
@@ -11,7 +11,7 @@ import Loading from './components/Loading.vue';
 export default {
   components: {
     TheHeader,
-    AppSearch,
+    AppSelect,
     CharactersList,
     Loading,
   },
@@ -30,8 +30,8 @@ export default {
       let urlApi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=60&offset=0";
 
 
-      if (store.select) {
-        urlApi += `?archetype=${store.select}num=60&offset=0`;
+      if (store.select.length > 0) {
+        urlApi += `?archetype=${store.select}`;
       }
 
       axios.get(urlApi)
@@ -43,7 +43,7 @@ export default {
           }, 1000);
           this.store.charactersList = response.data.data;
           console.log(this.store.charactersList)
-        });
+        })
     }
   },
   created() {
@@ -56,7 +56,8 @@ export default {
 <template>
   <TheHeader />
   <main>
-    <AppSearch @doSelect="getCharacters" />
+    <!-- <AppSelect /> -->
+    <AppSelect v:on-doSelect="getCharacters"/>
     <CharactersList />
   </main>
   <Loading />
