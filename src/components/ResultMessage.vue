@@ -5,7 +5,7 @@
 
 <script>
 
-import { store } from '../store.js';
+import {store} from '../store.js';
 
 export default {
     name: 'ResultMessage',
@@ -16,7 +16,7 @@ export default {
     },
     computed: {
         message() {
-            return `Ci sono ${this.store.charactersList.length} risultati...`;
+            return `Ci sono ${this.store.charactersList.length} risultati`;
         }
     }
 
@@ -25,4 +25,7 @@ export default {
 </script>
 
 
-<style></style>
+<style>
+
+
+</style>

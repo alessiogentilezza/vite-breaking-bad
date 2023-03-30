@@ -1,21 +1,18 @@
 <template>
-    <div class="container p-5">
-        <div class="col-3">
+        <!-- CICLO CATEGORIE -->
 
+        <div class="container p-5">
+        <div class="col-3">
             <select @change="$emit('doSelect')" class="form-select" v-model="store.select">
                 <option value="">All Cards</option>
-                <option value="Adamancipator">Adamancipator</option>
-                <option value="Archfiend">Archfiend</option>
-                <option value="Batteryman">Batteryman</option>
-                <option value="BlacCode Talkerkwing">Code Talker</option>
-                <option value="Dark Contract">Dark Contract</option>
-                <option value="Dark Magician">Dark Magician</option>
-                <option value="Noble Knight">Noble Knight</option>
+                <option v-for="(type, index) in storeType.charactersType" :key="index" :value="type.archetype_name">
+                    {{ type.archetype_name }}
+                </option>
             </select>
-
         </div>
     </div>
 
+    <!-- ELENCO RISULTATI -->
 
     <div class="container px-5">
         <div class="row p-4 bg-dark bg-gradient text-white">
@@ -28,10 +25,9 @@
 
 
 <script>
-
 import { store } from '../store.js';
+import { storeType } from '../storeType.js';
 import ResultMessage from './ResultMessage.vue';
-
 
 export default {
     name: 'AppSelect',
@@ -43,6 +39,7 @@ export default {
     data() {
         return {
             store,
+            storeType
         }
     }
 }
