@@ -16,7 +16,7 @@ export default {
     },
     computed: {
         message() {
-            return `Ci sono ${this.store.charactersList.length} risultati`;
+            return `Ci sono ${this.store.charactersList.length} risultati...`;
         }
     }
 
