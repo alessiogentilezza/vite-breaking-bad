@@ -1,7 +1,8 @@
 <template>
     <div class="container p-5">
         <div class="col-3">
-            <select @change="$emit('mysdoSelect')" class="form-select" v-model="store.select">
+
+            <select @change="$emit('doSelect')" class="form-select" v-model="store.select">
                 <option value="">All Cards</option>
                 <option value="Adamancipator">Adamancipator</option>
                 <option value="Archfiend">Archfiend</option>
@@ -9,7 +10,9 @@
                 <option value="BlacCode Talkerkwing">Code Talker</option>
                 <option value="Dark Contract">Dark Contract</option>
                 <option value="Dark Magician">Dark Magician</option>
+                <option value="Noble Knight">Noble Knight</option>
             </select>
+
         </div>
     </div>
 
@@ -39,7 +42,7 @@ export default {
 
     data() {
         return {
-            store
+            store,
         }
     }
 }

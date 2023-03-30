@@ -18,12 +18,11 @@ export default {
 
   data() {
     return {
-      store
+      store,
     }
   },
 
   methods: {
-
 
     getCharacters() {
 
@@ -31,14 +30,14 @@ export default {
 
       if (store.select.length > 0) {
         urlApi += `?archetype=${store.select}`;
-      }else{
+      } else {
         urlApi += `?num=90&offset=0`;
       }
 
       axios.get(urlApi)
         .then(response => {
           this.store.loading = false;
-          
+
           this.store.charactersList = response.data.data;
           console.log(this.store.charactersList)
         })
@@ -61,8 +60,7 @@ export default {
 <template>
   <TheHeader />
   <main>
-    <!-- <AppSelect /> -->
-    <AppSelect @mysdoSelect="getCharacters" />
+    <AppSelect @doSelect="getCharacters" />
     <CharactersList />
   </main>
   <Loading />

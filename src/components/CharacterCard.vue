@@ -1,23 +1,23 @@
 <template>
     <div class="character text-center my-3">
-        <img class='img-fluid' :src="image" :alt="`Immagine di: ${name}`"/>
+        <img class='img-fluid' :src="image" :alt="`Immagine di: ${name}`" />
         <h6>{{ name }}</h6>
         <p class="mb-0">{{ archetype }}</p>
     </div>
 </template>
 
 <script>
-    export default {
-        name: 'CharacterCard',
+export default {
+    name: 'CharacterCard',
 
-        // RICEVO LE PROPS DA LIST
+    // RICEVO LE PROPS DA LIST
 
-        props: {
-            image: String,
-            name: String,
-            archetype: String,
-        }
+    props: {
+        image: String,
+        name: String,
+        archetype: String,
     }
+}
 </script>
 
 
@@ -25,15 +25,16 @@
 @use "../styles/partials/variables" as *;
 
 
-.character{
+.character {
     background-color: $primary-color;
     height: 350px;
 }
-h6{
+
+h6 {
     color: white;
 }
-p{
+
+p {
     color: $text-color;
 }
-
 </style>
