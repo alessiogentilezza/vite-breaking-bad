@@ -1,8 +1,8 @@
 <template>
     <div class="container p-5">
         <div class="col-3">
-            <select v:on-change="$emit('doSelect')" class="form-select" v-model="store.select">
-                <option value="">All</option>
+            <select @change="$emit('mysdoSelect')" class="form-select" v-model="store.select">
+                <option value="">All Cards</option>
                 <option value="Adamancipator">Adamancipator</option>
                 <option value="Archfiend">Archfiend</option>
                 <option value="Batteryman">Batteryman</option>
