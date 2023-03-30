@@ -6,7 +6,9 @@
                 <option value="Adamancipator">Adamancipator</option>
                 <option value="Archfiend">Archfiend</option>
                 <option value="Batteryman">Batteryman</option>
-                <option value="Blackwing">Blackwing</option>
+                <option value="BlacCode Talkerkwing">Code Talker</option>
+                <option value="Dark Contract">Dark Contract</option>
+                <option value="Dark Magician">Dark Magician</option>
             </select>
         </div>
     </div>

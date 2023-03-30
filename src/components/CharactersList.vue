@@ -1,6 +1,6 @@
 <template>            
     <div class="container px-5">
-        <div class="row p-4">
+        <div class="row">
             <div class="col-2" v-for="(character, index) in store.charactersList" :key="index">
 
                 <!-- PASSAGGIO PROPS A CARD -->

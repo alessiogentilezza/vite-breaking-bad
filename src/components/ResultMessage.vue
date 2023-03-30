@@ -1,7 +1,7 @@
 <template>
 
         <h4 v-if="this.store.charactersList.length > 0" class="text-center">{{ message }}</h4>
-        <h4 v-else>Nessun risultato</h4>
+        <h4 v-else>Nessun risultato per questa categoria</h4>
 </template>
 
 <script>
