@@ -15,30 +15,34 @@ export default {
     CharactersList,
     Loading,
   },
+
   data() {
     return {
       store
     }
   },
+
   methods: {
+
+
     getCharacters() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?cardset=metal%20raiders&num=18&offset=0')
-        // axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
+
+      let urlApi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=60&offset=0";
 
 
+      if (store.select) {
+        urlApi += `?archetype=${store.select}num=60&offset=0`;
+      }
+
+      axios.get(urlApi)
         .then(response => {
-          this.store.loading = true;
-
+          this.store.loading = false;
           setTimeout(() => {
             this.store.loading = false;
-
             console.log("this is the first message");
-          }, 5000);
-
-
+          }, 1000);
           this.store.charactersList = response.data.data;
           console.log(this.store.charactersList)
-
         });
     }
   },
@@ -50,13 +54,11 @@ export default {
 </script>
 
 <template>
-  <TheHeader></TheHeader>
+  <TheHeader />
   <main>
-    <AppSearch />
+    <AppSearch @doSelect="getCharacters" />
     <CharactersList />
-
   </main>
-
   <Loading />
 </template>
 

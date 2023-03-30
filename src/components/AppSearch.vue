@@ -1,15 +1,21 @@
 <template>
-    <div class="container px-5 pt-5">
-        <div class="wrap">
-            <div class="col-auto">
-                <input type="text" class="form-control" placeholder="Search character" v-model="store.search">
-            </div>
+    <div class="container p-5">
+        <div class="col-3">
+            <select @change="$emit('doSelect')" class="form-select" aria-label="Default select example" v-model="store.select">
+                <option value="Adamancipator">Adamancipator</option>
+                <option value="Archfiend">Archfiend</option>
+                <option value="Batteryman">Batteryman</option>
+                <option value="Blackwing">Blackwing</option>
+            </select>
         </div>
-
     </div>
-    <div class="container px-5 pt-5">
-        <div class="row p-4">
-            Lorem ipsum dolor sit amet.
+
+
+    <div class="container px-5">
+        <div class="row p-4 bg-dark bg-gradient text-white">
+            <div class="col-auto">
+                Lorem ipsum dolor sit amet.
+            </div>
         </div>
     </div>
 </template>
@@ -30,13 +36,4 @@ export default {
 </script>
 
 
-<style scoped lang="scss">
-.row {
-    background-color: #222529;
-    color: white;
-}
-
-.wrap {
-    width: 200px;
-}
-</style>
+<style></style>
