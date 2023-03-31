@@ -36,22 +36,24 @@ export default {
         .then(response => {
 
           this.storeType.charactersType = response.data;
-          console.log(this.storeType.charactersType)
+          // console.log(this.storeType.charactersType)
         })
+
 
     },
 
     //ARRAY CARDS//
     getCharacters() {
 
-      let urlApi = "https://db.ygoprodeck.com/api/v7/cardinfo.php";
+      let urlApi = "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=90&offset=0";
 
       if (store.select.length > 0) {
-        urlApi += `?archetype=${store.select}`;
-        console.log(store.select.length);
+        urlApi += `&archetype=${store.select}`;
+        console.log(store.select);
+        console.log(urlApi);
 
-      } else {
-        urlApi += `?num=90&offset=0`;
+        // } else {
+        //   urlApi += `?num=90&offset=0`;
       }
 
       axios.get(urlApi)
@@ -59,8 +61,9 @@ export default {
           this.store.loading = false;
 
           this.store.charactersList = response.data.data;
-          console.log(this.store.charactersList)
+          console.log(response.data.data);
         })
+
         .catch(err => {
           console.log(err);
           this.store.charactersList = [];
@@ -68,7 +71,9 @@ export default {
           console.log('La ricerca non ha dato risultati');
         })
 
-    }
+
+    },
+
   },
   created() {
 

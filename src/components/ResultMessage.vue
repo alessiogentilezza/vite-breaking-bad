@@ -1,5 +1,5 @@
 <template>
-    <h4 v-if="this.store.charactersList.length > 0" class="text-center">{{ message }}</h4>
+    <h4 v-if="store.charactersList.length > 0" class="text-center">{{ message }}</h4>
     <h4 v-else>Nessun risultato per questa categoria</h4>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     },
     computed: {
         message() {
-            return `Ci sono ${this.store.charactersList.length} risultati`;
+            return `Ci sono ${store.charactersList.length} risultati`;
         }
     }
 

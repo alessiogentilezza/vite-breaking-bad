@@ -1,6 +1,8 @@
-@use "bootstrap";
 @use "../styles/partials/variables" as *;
 
+@import "bootstrap";
+@import "@fontsource/metropolis";
+@import "@fontsource/montserrat";
 * {
     padding: 0;
     margin: 0;
@@ -8,6 +10,7 @@
 }
 
 body{
+    font-family: "Montserrat", sans-serif;
     background-color: $primary-color;
 }
 
