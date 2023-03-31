@@ -1,7 +1,7 @@
 <script >
 import axios from 'axios';
 
-//ARRAY CARDS//
+//ARRAY CARDS///
 import { store } from './store.js';
 
 //ARRAY CATEGORIE//
